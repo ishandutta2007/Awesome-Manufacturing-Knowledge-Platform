@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19"/>
+      <stop offset="50%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+
+    <!-- Accent Gradient for Text & Shapes -->
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+
+    <linearGradient id="glowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#374151" stroke-width="0.7" stroke-opacity="0.4"/>
+      <circle cx="40" cy="40" r="1.5" fill="#60a5fa" fill-opacity="0.3"/>
+    </pattern>
+
+    <!-- Dynamic CSS Animations -->
+    <style>
+      @keyframes floatGrid {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+
+      @keyframes pulseGlow {
+        0% { opacity: 0.3; transform: scale(0.98); }
+        50% { opacity: 0.7; transform: scale(1.02); }
+        100% { opacity: 0.3; transform: scale(0.98); }
+      }
+
+      @keyframes dashScan {
+        0% { stroke-dashoffset: 1000; }
+        100% { stroke-dashoffset: 0; }
+      }
+
+      @keyframes rotateGear {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+
+      .animated-bg-grid {
+        animation: floatGrid 8s ease-in-out infinite;
+      }
+
+      .pulsing-glow {
+        animation: pulseGlow 5s ease-in-out infinite;
+        transform-origin: center;
+      }
+
+      .scanning-line {
+        stroke-dasharray: 200, 20;
+        animation: dashScan 12s linear infinite;
+      }
+
+      .rotating-gear {
+        animation: rotateGear 20s linear infinite;
+        transform-origin: 1080px 70px;
+      }
+
+      .title-text {
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 800;
+        font-size: 42px;
+        fill: #ffffff;
+      }
+
+      .subtitle-text {
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 500;
+        font-size: 19px;
+        fill: #9ca3af;
+      }
+
+      .badge-text {
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        fill: #60a5fa;
+      }
+    </style>
+  </defs>
+
+  <!-- Base Layer: Background -->
+  <rect width="1200" height="300" rx="16" fill="url(#bgGradient)"/>
+
+  <!-- Dynamic Aspect 1: Glowing Ambient Orbs (Background) -->
+  <circle cx="150" cy="80" r="180" fill="url(#glowGradient)" class="pulsing-glow" filter="blur(40px)"/>
+  <circle cx="1050" cy="220" r="160" fill="url(#glowGradient)" class="pulsing-glow" filter="blur(50px)"/>
+
+  <!-- Dynamic Aspect 2: Tech Grid (Background Layer) -->
+  <rect width="1200" height="300" rx="16" fill="url(#grid)" class="animated-bg-grid"/>
+
+  <!-- Dynamic Aspect 3: Scanning Tech Lines & Circuit Nodes -->
+  <path d="M 50 250 L 350 250 L 420 280 L 1150 280" stroke="url(#accentGradient)" stroke-width="2" fill="none" class="scanning-line" opacity="0.6"/>
+  <path d="M 100 20 L 800 20 L 880 50 L 1150 50" stroke="#3b82f6" stroke-width="1.5" stroke-opacity="0.4" fill="none" class="scanning-line"/>
+
+  <!-- Dynamic Aspect 4: Rotating Industry Gear Graphic (Decorative Top Right Background) -->
+  <g class="rotating-gear" opacity="0.15">
+    <circle cx="1080" cy="70" r="45" fill="none" stroke="#60a5fa" stroke-width="6" stroke-dasharray="10 8"/>
+    <circle cx="1080" cy="70" r="25" fill="none" stroke="#60a5fa" stroke-width="3"/>
+  </g>
+
+  <!-- Card Frame Border -->
+  <rect x="2" y="2" width="1196" height="296" rx="14" fill="none" stroke="url(#accentGradient)" stroke-width="1.5" stroke-opacity="0.5"/>
+
+  <!-- Foreground Content (Guaranteed Z-Index / Text Visibility) -->
+  <!-- Top Category Pill Badge -->
+  <g transform="translate(60, 48)">
+    <rect width="280" height="32" rx="16" fill="#1e293b" stroke="#3b82f6" stroke-width="1"/>
+    <circle cx="18" cy="16" r="5" fill="#10b981"/>
+    <text x="32" y="21" class="badge-text">CONNECTED WORKER &amp; SOPs</text>
+  </g>
+
+  <!-- Main Title -->
+  <text x="60" y="132" class="title-text">
+    Awesome Manufacturing Knowledge Platform
+  </text>
+  
+  <!-- Gradient Line Accent Under Title -->
+  <rect x="60" y="148" width="480" height="4" rx="2" fill="url(#accentGradient)"/>
+
+  <!-- Subtitle -->
+  <text x="60" y="192" class="subtitle-text">
+    Curated SaaS Platforms &amp; Open-Source Tools for Digital Work Instructions,
+  </text>
+  <text x="60" y="220" class="subtitle-text">
+    Standard Operating Procedures (SOPs), Skills Management &amp; Shop-Floor Operations.
+  </text>
+
+  <!-- Decorative Feature Tag Pills -->
+  <g transform="translate(60, 248)">
+    <!-- Pill 1 -->
+    <rect x="0" y="0" width="130" height="26" rx="6" fill="#1f2937" stroke="#4b5563" stroke-width="1"/>
+    <text x="12" y="17" font-family="sans-serif" font-size="11" fill="#d1d5db" font-weight="600">⚡ Digital SOPs</text>
+
+    <!-- Pill 2 -->
+    <rect x="142" y="0" width="145" height="26" rx="6" fill="#1f2937" stroke="#4b5563" stroke-width="1"/>
+    <text x="154" y="17" font-family="sans-serif" font-size="11" fill="#d1d5db" font-weight="600">🤖 AI Work Guidance</text>
+
+    <!-- Pill 3 -->
+    <rect x="299" y="0" width="135" height="26" rx="6" fill="#1f2937" stroke="#4b5563" stroke-width="1"/>
+    <text x="311" y="17" font-family="sans-serif" font-size="11" fill="#d1d5db" font-weight="600">🛠️ Frontline Apps</text>
+
+    <!-- Pill 4 -->
+    <rect x="446" y="0" width="145" height="26" rx="6" fill="#1f2937" stroke="#4b5563" stroke-width="1"/>
+    <text x="458" y="17" font-family="sans-serif" font-size="11" fill="#d1d5db" font-weight="600">🌐 Industry 4.0 / 5.0</text>
+  </g>
+</svg>
